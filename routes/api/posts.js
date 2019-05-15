@@ -105,7 +105,6 @@ router.put("/like/:id", auth, async (req, res) => {
     res.json(post.likes);
   } catch (err) {
     console.error(err.message);
-    // if (err.kind === "ObjectId") return res.status(404).json({ msg: "Post not found" });
     res.status(500).send("Server Error");
   }
 });
@@ -161,7 +160,6 @@ router.post("/comment/:id", [auth, [
     res.json(post.comments);
   } catch (err) {
     console.error(err.message);
-    // if (err.kind === "ObjectId") return res.status(404).json({ msg: "Post not found" });
     res.status(500).send("Server Error");
   }
 });
